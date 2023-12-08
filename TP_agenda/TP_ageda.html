@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<div id="app">
+    <h2>Mon Agenda</h2>
+    <div id="formContainer"><!-- Le formulaire sera généré ici -->
+        <input type="text" id="inputtext">
+        <button onclick="submit()">submit</button>
+    </div>
+    <ul id="eventList"><!-- Les événements seront listés ici --></ul>
+</div>
+<script>
+    function submit() {
+        let eventList=document.getElementById("eventList")
+        let input=document.getElementById("inputtext").value;
+        var newElement = document.createElement("li");
+        newElement.innerHTML = input;
+        eventList.appendChild(newElement);
+        
+        var newButtonElement = document.createElement("button");
+        newButtonElement.innerHTML="Supprimer"
+        newButtonElement.onclick= function(){
+            eventList.removeChild(newElement)
+        }
+        newElement.appendChild(newButtonElement);
+        
+    }
+</script>

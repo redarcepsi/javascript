@@ -1,0 +1,217 @@
+var num=255;
+/* console.log(num,typeof num); */
+var txt="255";
+/* console.log(txt,typeof txt); */
+var bin=true;
+/* console.log(bin,typeof bin); */
+var flt=7.23;
+/* console.log(flt,typeof flt) */
+num++;
+/* console.log(num,typeof num); */
+num--;
+/* console.log(num,typeof num); */
+var txt1 = txt+" est ici une chaine de caractères";
+var txt2 = "voici le résultat "+txt;
+/* console.log(txt1);
+console.log(txt2);
+console.log(txt); */
+bin = false
+/* num=flt+num
+console.log(num) */
+var Num=23;
+var Txt="33";
+/* console.log(Txt+Num);
+console.log(Num+Txt); */
+
+var tmp = 0;
+tmp = parseInt(Txt);
+Num += tmp;
+/* console.log(Num) */
+
+Num=23;
+Num+= parseInt(Txt);
+console.log(Num)
+var Temp1="7.15";
+Num=23;
+Num+=parseFloat(Temp1);
+console.log(Num)
+
+
+
+
+var age=0;
+//age=prompt("quel âge as tu ?","mettre un nombre positif");
+/* if (age>=18){
+  console.log("vous êtes majeur")
+  }else if(age >= 13 && age < 18){
+    console.log("vous êtes adolescent")
+  }else{
+  console.log("vous êtes mineur")
+  } */
+  
+//(age >=18) ? console.log("majeur"):console.log("mineur");
+
+var Jour = "Mardi";
+Jour=Jour.toLowerCase();
+switch(Jour){
+	case "lundi":
+  	console.log("lundi");
+    break;
+  case "mardi":
+  	console.log("mardi");
+    break;
+  default:
+  	console.log("autre jour");
+}
+
+
+
+
+var temp=10;
+/* for(var i=0;i<temp;i++){
+  console.log(i)
+} */
+var i=0;
+/* while (i<temp){
+  console.log("Index n°"+i);
+  i++;
+} */
+
+
+
+
+var fruits = ["pomme","poire","ananas"];
+var fruitsl = new Array("pomme","poire","ananas");
+var age =[1,10,2,4];
+var estcher = new Array(true,false,true,false);
+console.log(fruits.length);
+console.log(fruits[1]);
+console.log(estcher.length);
+console.log(estcher[3]);
+
+age.forEach(function(age, index){
+	console.log("n°"+index+" - "+age+" ans");
+});
+
+for(var i=0;i<age.length;i++){
+	console.log("n°"+i+" - "+age[i]);
+}
+
+while(i<age.length){
+	console.log("while n° "+i+" - "+age[i]+"ans");
+  i++;
+}
+
+
+
+var tab=[1,2,3];
+var item=tab[1];
+console.log(item);
+tab[1]=5;
+console.log(tab[1]);
+
+var dogs=["Bulldog","Beagle","Labrador"]
+console.log(dogs.toString())
+
+
+
+function calcul(base){
+	let prix=10; 
+	return (base+prix)*1.10;
+}
+try{
+console.log(prix)
+}catch(erreur){
+console.log(erreur.message)
+}
+
+console.log(calcul(100));
+
+
+
+
+
+
+
+/* function isoNum(){
+  let nombre = 42;
+  return nombre
+} */
+
+/* console.log(isoNum()) */
+
+/* var base=prompt("entrez un chiffre");
+var resultat = 0
+
+function modulo(){
+  resultat=base%5;
+  return resultat;
+}
+resultat=modulo(); */
+/* console.log(resultat) */
+
+var chiffre = prompt("donnez moi un nombre","entre 0 et 5");
+chiffre=parseInt(chiffre);
+if (chiffre < 0 || chiffre > 5){
+alert("le chiffre n'est pas compris entre 0 et 5")
+}else {
+		switch(chiffre){
+  case 0:
+  	console.log("zero");
+    break;
+  case 1:
+  	console.log("un");
+    break;
+  case 2:
+  	console.log("deux");
+    break;
+  case 3:
+  	console.log("trois");
+    break;
+  case 4:
+  	console.log("quatre");
+    break;
+  case 5:
+  	console.log("cinq");
+    break;
+  default :
+  	console.log("pas bon")
+  }
+}
+
+
+
+
+
+
+function CreerCompteur(){
+	let compteur = 0;
+  return compteur;
+}
+function increment(toto){
+	toto++;
+  return toto;
+}
+function decrement(toto){
+	toto--;
+  return toto;
+}
+
+var test = CreerCompteur();
+console.log(test);
+test = increment(test);
+console.log(test);
+test = decrement(test);
+console.log(test);
+
+
+
+var nbweek=prompt("nbweek");
+var d = new Date();
+var vudate = d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear();
+for(var i=0;i<nbweek;i++){
+	d.setDate(d.getDate() + 7);
+  vudate = d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear();
+  console.log(vudate);
+ 
+}
