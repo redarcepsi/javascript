@@ -12,16 +12,25 @@
     function submit() {
         let eventList=document.getElementById("eventList")
         let input=document.getElementById("inputtext").value;
-        var newElement = document.createElement("li");
+        let newElement = document.createElement("li");
         newElement.innerHTML = input;
-        eventList.appendChild(newElement);
-        
-        var newButtonElement = document.createElement("button");
-        newButtonElement.innerHTML="Supprimer"
-        newButtonElement.onclick= function(){
+
+        let newButtonDelElement = document.createElement("button");
+        newButtonDelElement.innerHTML="Supprimer"
+        newButtonDelElement.onclick= function(){
             eventList.removeChild(newElement)
         }
-        newElement.appendChild(newButtonElement);
-        
+
+        let newButtonModElement = document.createElement("button");
+        newButtonModElement.innerHTML="Modifier"
+        newButtonModElement.onclick= function(){
+            newElement.textContent=prompt("modifier")
+            newElement.appendChild(newButtonModElement);
+            newElement.appendChild(newButtonDelElement);
+        }
+
+        newElement.appendChild(newButtonModElement);
+        eventList.appendChild(newElement);
+        newElement.appendChild(newButtonDelElement);
     }
 </script>
