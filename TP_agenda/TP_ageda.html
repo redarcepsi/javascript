@@ -10,27 +10,49 @@
 </div>
 <script>
     function submit() {
+        /*creation de l'element*/
         let eventList=document.getElementById("eventList")
-        let input=document.getElementById("inputtext").value;
+        let input=document.getElementById("inputtext").value;//recupère la valeur de l'input
         let newElement = document.createElement("li");
-        newElement.innerHTML = input;
+        newElement.innerHTML = input; // rempli le li de l'input
 
+
+        /*creation du bouton delete*/
         let newButtonDelElement = document.createElement("button");
-        newButtonDelElement.innerHTML="Supprimer"
-        newButtonDelElement.onclick= function(){
+        newButtonDelElement.innerHTML="Supprimer" // ajout du texte au bouton
+        newButtonDelElement.onclick= function(){ // ajout de la fonction onclick
             eventList.removeChild(newElement)
         }
 
+        /*creation du bouton modifier*/
         let newButtonModElement = document.createElement("button");
-        newButtonModElement.innerHTML="Modifier"
-        newButtonModElement.onclick= function(){
-            newElement.textContent=prompt("modifier")
-            newElement.appendChild(newButtonModElement);
-            newElement.appendChild(newButtonDelElement);
-        }
+        newButtonModElement.innerHTML="Modifier" // ajout du texte au bouton
+        newButtonModElement.onclick= function(){ // ajout de la fonction onclick
+            let result =prompt("modifier") // prompt pour le nouveau texte
+            if (result!=null && result!=""){ //si on appui sur annuler ou que le prompt est vide on ne modifie pas le li
+                newElement.textContent=result 
+                newElement.appendChild(newButtonModElement); // j'ai remis les bouton sinon apres le prompt ils s'enlevent
+                newElement.appendChild(newButtonDelElement);
+        }}
 
-        newElement.appendChild(newButtonModElement);
-        eventList.appendChild(newElement);
-        newElement.appendChild(newButtonDelElement);
+        /*ajout au html*/
+        eventList.appendChild(newElement); // ajout de l'element a ul
+        newElement.appendChild(newButtonModElement); // ajout de modifier a l'element
+        newElement.appendChild(newButtonDelElement); // ajout de delete a l'element
     }
 </script>
+
+
+<style>
+    body{
+        background-color: dimgray;
+    }
+    #formContainer{
+        display: flex;
+        justify-content:center;
+    }
+    h2{
+        display: flex;
+        justify-content: center;
+    }
+</style>
